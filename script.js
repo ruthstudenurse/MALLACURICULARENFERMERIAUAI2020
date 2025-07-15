@@ -109,26 +109,29 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   ciclos.forEach(ciclo => {
-    const tabla = document.createElement("table");
-    const encabezado = `
+    const tablaHTML = `
       <h2>Ciclo ${ciclo.numero}</h2>
       <table>
-        <tr>
-          <th>Código</th>
-          <th>Curso</th>
-          <th>Créditos</th>
-          <th>Pre Requisitos</th>
-        </tr>
-        ${ciclo.cursos.map(curso => `
+        <thead>
           <tr>
-            <td>${curso[0]}</td>
-            <td>${curso[1]}</td>
-            <td>${curso[2]}</td>
-            <td>${curso[3]}</td>
-          </tr>`).join("")}
+            <th>Código</th>
+            <th>Curso</th>
+            <th>Créditos</th>
+            <th>Pre Requisitos</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${ciclo.cursos.map(curso => `
+            <tr>
+              <td>${curso[0]}</td>
+              <td>${curso[1]}</td>
+              <td>${curso[2]}</td>
+              <td>${curso[3]}</td>
+            </tr>
+          `).join("")}
+        </tbody>
       </table>
     `;
-    contenido.innerHTML += encabezado;
+    contenido.innerHTML += tablaHTML;
   });
-  
 });
