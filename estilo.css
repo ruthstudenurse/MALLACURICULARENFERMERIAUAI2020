@@ -3,82 +3,82 @@ body {
   background-color: #fff0f5;
   color: #333;
   margin: 0;
-  padding: 10px;
+  padding: 5px;
 }
 
 h1 {
   text-align: center;
   color: #d36ba6;
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 #malla {
   display: flex;
   overflow-x: auto;
-  gap: 8px;
-  padding: 5px;
+  gap: 5px;
+  padding: 3px;
   scroll-snap-type: x mandatory;
 }
 
 .ciclo {
-  flex: 0 0 180px;
+  flex: 0 0 160px;
   scroll-snap-align: start;
   background-color: #ffe6f0;
-  border-radius: 6px;
-  padding: 6px;
-  box-shadow: 0 0 4px rgba(211, 107, 166, 0.2);
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: 0 0 3px rgba(211, 107, 166, 0.2);
 }
 
 .ciclo h2 {
   background-color: #f4a4c6;
   color: white;
-  font-size: 13px;
-  padding: 5px;
+  font-size: 12px;
+  padding: 4px;
   border-radius: 3px;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
 .cursos {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .curso {
   background-color: #fce4ec;
   border: 1px solid #f8bbd0;
-  border-radius: 5px;
-  padding: 4px;
-  font-size: 11px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-radius: 4px;
+  padding: 3px;
+  font-size: 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04);
 }
 
 .completado {
   background-color: #d8f3dc;
-  border: 2px solid #81c784;
+  border: 1px solid #81c784;
 }
 
 .disponible {
   background-color: #fff9c4;
-  border: 2px solid #fbc02d;
+  border: 1px solid #fbc02d;
 }
 
 .bloqueado {
   background-color: #f8bbd0;
-  border: 2px dashed #e91e63;
+  border: 1px dashed #e91e63;
   opacity: 0.5;
 }
 
 button {
-  margin-top: 3px;
-  padding: 3px 6px;
-  font-size: 10px;
+  margin-top: 2px;
+  padding: 2px 4px;
+  font-size: 9px;
   background-color: #d36ba6;
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
 }
 
