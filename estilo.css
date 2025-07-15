@@ -3,55 +3,56 @@ body {
   background-color: #fff0f5;
   color: #333;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
 }
 
 h1 {
   text-align: center;
   color: #d36ba6;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 #malla {
   display: flex;
   overflow-x: auto;
-  gap: 15px;
-  padding: 10px;
+  gap: 10px;
+  padding: 5px;
   scroll-snap-type: x mandatory;
 }
 
 .ciclo {
-  flex: 0 0 260px;
+  flex: 0 0 200px;
   scroll-snap-align: start;
   background-color: #ffe6f0;
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 0 10px rgba(211, 107, 166, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 0 6px rgba(211, 107, 166, 0.2);
 }
 
 .ciclo h2 {
   background-color: #f4a4c6;
   color: white;
-  font-size: 16px;
-  padding: 8px;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 4px;
+  margin-bottom: 8px;
   text-align: center;
 }
 
 .cursos {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .curso {
   background-color: #fce4ec;
   border: 1px solid #f8bbd0;
-  border-radius: 8px;
-  padding: 8px;
-  font-size: 14px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .completado {
@@ -71,9 +72,9 @@ h1 {
 }
 
 button {
-  margin-top: 6px;
-  padding: 5px 10px;
-  font-size: 12px;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
   background-color: #d36ba6;
   color: white;
   border: none;
