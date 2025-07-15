@@ -1,121 +1,133 @@
-function mostrarCiclo(ciclo) {
-  const contenido = {
-    1: `
-      <h2>Ciclo 1</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>10A06R</td><td>Cultura Ambiental</td><td>3</td><td>—</td></tr>
-        <tr><td>10A01R</td><td>Matemática I</td><td>4</td><td>—</td></tr>
-        <tr><td>10A02R</td><td>Pensamiento Crítico</td><td>4</td><td>—</td></tr>
-        <tr><td>10A03R</td><td>Filosofía y Ética</td><td>3</td><td>—</td></tr>
-        <tr><td>10A04R</td><td>Taller de Comunicación Oral</td><td>4</td><td>—</td></tr>
-        <tr><td>10A05R</td><td>Globalización y Realidad Nacional</td><td>3</td><td>—</td></tr>
-      </table>
-    `,
-    2: `
-      <h2>Ciclo 2</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>10A07R</td><td>Matemática II</td><td>4</td><td>10A01R</td></tr>
-        <tr><td>10A08R</td><td>Metodología de la Investigación</td><td>4</td><td>—</td></tr>
-        <tr><td>10A09R</td><td>Emprendimiento</td><td>3</td><td>—</td></tr>
-        <tr><td>10A10R</td><td>Taller de Comunicación Escrita</td><td>4</td><td>—</td></tr>
-        <tr><td>10A11R</td><td>Administración General</td><td>3</td><td>—</td></tr>
-        <tr><td>21A01R</td><td>Actividades de Proyección Social I</td><td>3</td><td>—</td></tr>
-      </table>
-    `,
-    3: `
-      <h2>Ciclo 3</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A02R</td><td>Anatomía y Fisiología</td><td>4</td><td>—</td></tr>
-        <tr><td>21A03R</td><td>Estadística</td><td>3</td><td>—</td></tr>
-        <tr><td>21A04R</td><td>Biología</td><td>3</td><td>—</td></tr>
-        <tr><td>21A05R</td><td>Métodos de Atención en Enfermería</td><td>4</td><td>—</td></tr>
-        <tr><td>21A06R</td><td>Antropología de la Salud</td><td>4</td><td>—</td></tr>
-        <tr><td>21A07R</td><td>Actividades de Proyección Social II</td><td>3</td><td>21A01R</td></tr>
-      </table>
-    `,
-    4: `
-      <h2>Ciclo 4</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A08R</td><td>Semiología</td><td>4</td><td>21A02R</td></tr>
-        <tr><td>21A09R</td><td>Química y Bioquímica</td><td>3</td><td>—</td></tr>
-        <tr><td>21A10R</td><td>Microbiología y Parasitología</td><td>3</td><td>—</td></tr>
-        <tr><td>21A11R</td><td>Enfermería Clínica</td><td>5</td><td>—</td></tr>
-        <tr><td>21A12R</td><td>Enfermería Pediátrica</td><td>6</td><td>—</td></tr>
-        <tr><td>21A13R</td><td>Actividades de Proyección Social III</td><td>3</td><td>21A07R</td></tr>
-      </table>
-    `,
-    5: `
-      <h2>Ciclo 5</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A14R</td><td>Farmacología y Terapéutica</td><td>3</td><td>—</td></tr>
-        <tr><td>21A15R</td><td>Enfermería en Atención Primaria de Salud I</td><td>3</td><td>—</td></tr>
-        <tr><td>21A16R</td><td>Enfermería en Salud Comunitaria I</td><td>4</td><td>—</td></tr>
-        <tr><td>21A17R</td><td>Nutrición y Dietoterapia</td><td>3</td><td>—</td></tr>
-        <tr><td>21A18R</td><td>Enfermería en Salud del Adulto I</td><td>6</td><td>—</td></tr>
-        <tr><td>21A19R</td><td>Actividades de Proyección Social IV</td><td>3</td><td>—</td></tr>
-      </table>
-    `,
-    6: `
-      <h2>Ciclo 6</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A20R</td><td>Salud Pública y Epidemiología</td><td>2</td><td>—</td></tr>
-        <tr><td>21A21R</td><td>Enfermería en Atención Primaria de Salud II</td><td>4</td><td>21A15R</td></tr>
-        <tr><td>21A22R</td><td>Enfermería Geriátrica</td><td>4</td><td>—</td></tr>
-        <tr><td>21A23R</td><td>Enfermería en Medicina Alternativa</td><td>2</td><td>—</td></tr>
-        <tr><td>21A24R</td><td>Enfermería en Salud del Adulto II</td><td>6</td><td>21A18R</td></tr>
-        <tr><td>21AA1R</td><td>Promoción de la Salud - Electivo</td><td>2</td><td>—</td></tr>
-        <tr><td>21AA2R</td><td>Enfermería y Ética - Electivo</td><td>2</td><td>—</td></tr>
-      </table>
-    `,
-    7: `
-      <h2>Ciclo 7</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A25R</td><td>Taller de Investigación I</td><td>4</td><td>—</td></tr>
-        <tr><td>21A26R</td><td>Enfermería en Emergencias y Desastres</td><td>3</td><td>—</td></tr>
-        <tr><td>21A27R</td><td>Enfermería en Salud Mental y Psiquiatría</td><td>3</td><td>—</td></tr>
-        <tr><td>21A28R</td><td>Enfermería en Salud de la Mujer</td><td>6</td><td>—</td></tr>
-        <tr><td>21A29R</td><td>Inglés I</td><td>3</td><td>—</td></tr>
-        <tr><td>21AA3R</td><td>Proyectos de Desarrollo e Inversión Social - Electivo</td><td>2</td><td>—</td></tr>
-        <tr><td>21AA4R</td><td>Administración y Gerencia en Enfermería - Electivo</td><td>2</td><td>—</td></tr>
-      </table>
-    `,
-    8: `
-      <h2>Ciclo 8</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A30R</td><td>Enfermería en Salud Comunitaria II</td><td>3</td><td>—</td></tr>
-        <tr><td>21A31R</td><td>Taller de Investigación II</td><td>4</td><td>21A25R</td></tr>
-        <tr><td>21A32R</td><td>Internado I</td><td>10</td><td>—</td></tr>
-        <tr><td>21A33R</td><td>Inglés II</td><td>3</td><td>21A29R</td></tr>
-        <tr><td>21AA5R</td><td>Fundamentos de Rehabilitación Geriátrica - Electivo</td><td>2</td><td>—</td></tr>
-        <tr><td>21AA6R</td><td>Dirección y Gestión de Centros Gerontológicos - Electivo</td><td>2</td><td>—</td></tr>
-      </table>
-    `,
-    9: `
-      <h2>Ciclo 9</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A35R</td><td>Internado II</td><td>15</td><td>21A32R</td></tr>
-        <tr><td>P02A2151R</td><td>Seminario de Tesis</td><td>6</td><td>—</td></tr>
-      </table>
-    `,
-    10: `
-      <h2>Ciclo 10</h2>
-      <table border="1">
-        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
-        <tr><td>21A37R</td><td>Internado III</td><td>15</td><td>21A35R</td></tr>
-        <tr><td>P02A2153R</td><td>Trabajo de Investigación</td><td>6</td><td>P02A2151R</td></tr>
-      </table>
-    `
-  };
+document.addEventListener("DOMContentLoaded", () => {
+  const contenido = document.getElementById("contenido");
 
-  // Mostrar el contenido en el div con id="contenido"
-  document.getElementById("contenido").innerHTML = contenido[ciclo] || "<p>No hay información disponible.</p>";
-}
+  const ciclos = [
+    {
+      numero: 1,
+      cursos: [
+        ["10A06R", "Cultura Ambiental", 3, "—"],
+        ["10A01R", "Matemática I", 4, "—"],
+        ["10A02R", "Pensamiento Crítico", 4, "—"],
+        ["10A03R", "Filosofía y Ética", 3, "—"],
+        ["10A04R", "Taller de Comunicación Oral", 4, "—"],
+        ["10A05R", "Globalización y Realidad Nacional", 3, "—"]
+      ]
+    },
+    {
+      numero: 2,
+      cursos: [
+        ["10A07R", "Matemática II", 4, "10A01R"],
+        ["10A08R", "Metodología de la Investigación", 4, "—"],
+        ["10A09R", "Emprendimiento", 3, "—"],
+        ["10A10R", "Taller de Comunicación Escrita", 4, "—"],
+        ["10A11R", "Administración General", 3, "—"],
+        ["21A01R", "Actividades de Proyección Social I", 3, "—"]
+      ]
+    },
+    {
+      numero: 3,
+      cursos: [
+        ["21A02R", "Anatomía y Fisiología", 4, "—"],
+        ["21A03R", "Estadística", 3, "—"],
+        ["21A04R", "Biología", 3, "—"],
+        ["21A05R", "Métodos de Atención en Enfermería", 4, "—"],
+        ["21A06R", "Antropología de la Salud", 4, "—"],
+        ["21A07R", "Proyección Social II", 3, "21A01R"]
+      ]
+    },
+    {
+      numero: 4,
+      cursos: [
+        ["21A08R", "Semiología", 4, "21A02R"],
+        ["21A09R", "Química y Bioquímica", 3, "—"],
+        ["21A10R", "Microbiología y Parasitología", 3, "—"],
+        ["21A11R", "Enfermería Clínica", 5, "—"],
+        ["21A12R", "Enfermería Pediátrica", 6, "—"],
+        ["21A13R", "Proyección Social III", 3, "21A07R"]
+      ]
+    },
+    {
+      numero: 5,
+      cursos: [
+        ["21A14R", "Farmacología y Terapéutica", 3, "—"],
+        ["21A15R", "Enfermería Atención Primaria I", 3, "—"],
+        ["21A16R", "Salud Comunitaria I", 4, "—"],
+        ["21A17R", "Nutrición y Dietoterapia", 3, "—"],
+        ["21A18R", "Salud del Adulto I", 6, "—"],
+        ["21A19R", "Proyección Social IV", 3, "—"]
+      ]
+    },
+    {
+      numero: 6,
+      cursos: [
+        ["21A20R", "Salud Pública y Epidemiología", 2, "—"],
+        ["21A21R", "Atención Primaria II", 4, "21A15R"],
+        ["21A22R", "Enfermería Geriátrica", 4, "—"],
+        ["21A23R", "Medicina Alternativa", 2, "—"],
+        ["21A24R", "Salud del Adulto II", 6, "21A18R"],
+        ["21AA1R", "Promoción de la Salud", 2, "—"],
+        ["21AA2R", "Ética en Enfermería", 2, "—"]
+      ]
+    },
+    {
+      numero: 7,
+      cursos: [
+        ["21A25R", "Taller Investigación I", 4, "—"],
+        ["21A26R", "Emergencias y Desastres", 3, "—"],
+        ["21A27R", "Salud Mental y Psiquiatría", 3, "—"],
+        ["21A28R", "Salud de la Mujer", 6, "—"],
+        ["21A29R", "Inglés I", 3, "—"],
+        ["21AA3R", "Proyectos Sociales", 2, "—"],
+        ["21AA4R", "Gestión en Enfermería", 2, "—"]
+      ]
+    },
+    {
+      numero: 8,
+      cursos: [
+        ["21A30R", "Salud Comunitaria II", 3, "—"],
+        ["21A31R", "Taller Investigación II", 4, "21A25R"],
+        ["21A32R", "Internado I", 10, "—"],
+        ["21A33R", "Inglés II", 3, "21A29R"],
+        ["21AA5R", "Rehabilitación Geriátrica", 2, "—"],
+        ["21AA6R", "Gestión Gerontológica", 2, "—"]
+      ]
+    },
+    {
+      numero: 9,
+      cursos: [
+        ["21A35R", "Internado II", 15, "21A32R"],
+        ["P02A2151R", "Seminario de Tesis", 6, "—"]
+      ]
+    },
+    {
+      numero: 10,
+      cursos: [
+        ["21A37R", "Internado III", 15, "21A35R"],
+        ["P02A2153R", "Trabajo de Investigación", 6, "P02A2151R"]
+      ]
+    }
+  ];
+
+  ciclos.forEach(ciclo => {
+    const tabla = document.createElement("table");
+    const encabezado = `
+      <h2>Ciclo ${ciclo.numero}</h2>
+      <table>
+        <tr>
+          <th>Código</th>
+          <th>Curso</th>
+          <th>Créditos</th>
+          <th>Pre Requisitos</th>
+        </tr>
+        ${ciclo.cursos.map(curso => `
+          <tr>
+            <td>${curso[0]}</td>
+            <td>${curso[1]}</td>
+            <td>${curso[2]}</td>
+            <td>${curso[3]}</td>
+          </tr>`).join("")}
+      </table>
+    `;
+    contenido.innerHTML += encabezado;
+  });
+});
