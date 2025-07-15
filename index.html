@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malla Curricular de Enfermería</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular Enfermería UAI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f8ff;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+    }
+    .botones {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .botones button {
+      margin: 5px;
+      padding: 10px 15px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .botones button:hover {
+      background-color: #004c99;
+    }
+    #contenido {
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #0066cc;
+      color: white;
+    }
+  </style>
 </head>
 <body>
+  <h1>Malla Curricular Enfermería UAI 2020</h1>
+  <div class="botones">
+    <!-- Botones del 1 al 10 -->
+    <script>
+      for (let i = 1; i <= 10; i++) {
+        document.write(`<button onclick="mostrarCiclo(${i})">Ciclo ${i}</button>`);
+      }
+    </script>
+  </div>
 
-  <h1>Malla Curricular de Enfermería - UAI</h1>
+  <div id="contenido">
+    <p>Selecciona un ciclo para ver los cursos.</p>
+  </div>
 
-  <div id="ciclos">
-    <button onclick="mostrarCiclo(1)">Ciclo 1</button>
-    <button onclick="mostrarCiclo(2)">Ciclo 2</button>
-    <button onclick="mostrarCiclo(3)">Ciclo 3</button>
-    <button onclick="mostrarCiclo(4)">Ciclo 4</button>
-    <button onclick="mostrarCiclo(5)">Ciclo 5</button>
-    <button onclick="mostrarCiclo(6)">Ciclo 6</button>
-    <button onclick="mostrarCiclo(7)">Ciclo 7</button>
-    <button onclick="mostrarCiclo(8)">Ciclo 8</button>
-    <button onclick="mostrarCiclo(9)">Cic
+  <!-- Conexión con script.js -->
+  <script src="script.js"></script>
+</body>
+</html>
