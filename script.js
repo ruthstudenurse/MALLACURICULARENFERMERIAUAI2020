@@ -88,4 +88,34 @@ function mostrarCiclo(ciclo) {
     `,
     8: `
       <h2>Ciclo 8</h2>
-      <table
+      <table border="1">
+        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
+        <tr><td>21A30R</td><td>Enfermería en Salud Comunitaria II</td><td>3</td><td>—</td></tr>
+        <tr><td>21A31R</td><td>Taller de Investigación II</td><td>4</td><td>21A25R</td></tr>
+        <tr><td>21A32R</td><td>Internado I</td><td>10</td><td>—</td></tr>
+        <tr><td>21A33R</td><td>Inglés II</td><td>3</td><td>21A29R</td></tr>
+        <tr><td>21AA5R</td><td>Fundamentos de Rehabilitación Geriátrica - Electivo</td><td>2</td><td>—</td></tr>
+        <tr><td>21AA6R</td><td>Dirección y Gestión de Centros Gerontológicos - Electivo</td><td>2</td><td>—</td></tr>
+      </table>
+    `,
+    9: `
+      <h2>Ciclo 9</h2>
+      <table border="1">
+        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
+        <tr><td>21A35R</td><td>Internado II</td><td>15</td><td>21A32R</td></tr>
+        <tr><td>P02A2151R</td><td>Seminario de Tesis</td><td>6</td><td>—</td></tr>
+      </table>
+    `,
+    10: `
+      <h2>Ciclo 10</h2>
+      <table border="1">
+        <tr><th>Código</th><th>Curso</th><th>Créd</th><th>Pre Requisitos</th></tr>
+        <tr><td>21A37R</td><td>Internado III</td><td>15</td><td>21A35R</td></tr>
+        <tr><td>P02A2153R</td><td>Trabajo de Investigación</td><td>6</td><td>P02A2151R</td></tr>
+      </table>
+    `
+  };
+
+  // Mostrar el contenido en el div con id="contenido"
+  document.getElementById("contenido").innerHTML = contenido[ciclo] || "<p>No hay información disponible.</p>";
+}
