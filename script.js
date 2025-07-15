@@ -68,5 +68,3 @@ function marcarCompletado(cod) {
 }
 
 document.addEventListener("DOMContentLoaded", renderMalla);
-<script src="script.js"></script>
-
