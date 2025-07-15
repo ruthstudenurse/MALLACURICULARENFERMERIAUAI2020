@@ -1,137 +1,70 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const contenido = document.getElementById("contenido");
+const cursos = [
+  { cod: "10A01R", nombre: "Matemática I", ciclo: 1, prereq: [] },
+  { cod: "10A02R", nombre: "Pensamiento Crítico", ciclo: 1, prereq: [] },
+  { cod: "10A03R", nombre: "Filosofía y Ética", ciclo: 1, prereq: [] },
+  { cod: "10A07R", nombre: "Matemática II", ciclo: 2, prereq: ["10A01R"] },
+  { cod: "10A08R", nombre: "Metodología de Investigación", ciclo: 2, prereq: [] },
+  { cod: "21A01R", nombre: "Proyección Social I", ciclo: 2, prereq: [] },
+  { cod: "21A02R", nombre: "Anatomía", ciclo: 3, prereq: [] },
+  { cod: "21A07R", nombre: "Proyección Social II", ciclo: 3, prereq: ["21A01R"] }
+];
 
-  const ciclos = [
-    {
-      numero: 1,
-      cursos: [
-        ["10A06R", "Cultura Ambiental", 3, "—"],
-        ["10A01R", "Matemática I", 4, "—"],
-        ["10A02R", "Pensamiento Crítico", 4, "—"],
-        ["10A03R", "Filosofía y Ética", 3, "—"],
-        ["10A04R", "Taller de Comunicación Oral", 4, "—"],
-        ["10A05R", "Globalización y Realidad Nacional", 3, "—"]
-      ]
-    },
-    {
-      numero: 2,
-      cursos: [
-        ["10A07R", "Matemática II", 4, "10A01R"],
-        ["10A08R", "Metodología de la Investigación", 4, "—"],
-        ["10A09R", "Emprendimiento", 3, "—"],
-        ["10A10R", "Taller de Comunicación Escrita", 4, "—"],
-        ["10A11R", "Administración General", 3, "—"],
-        ["21A01R", "Actividades de Proyección Social I", 3, "—"]
-      ]
-    },
-    {
-      numero: 3,
-      cursos: [
-        ["21A02R", "Anatomía y Fisiología", 4, "—"],
-        ["21A03R", "Estadística", 3, "—"],
-        ["21A04R", "Biología", 3, "—"],
-        ["21A05R", "Métodos de Atención en Enfermería", 4, "—"],
-        ["21A06R", "Antropología de la Salud", 4, "—"],
-        ["21A07R", "Proyección Social II", 3, "21A01R"]
-      ]
-    },
-    {
-      numero: 4,
-      cursos: [
-        ["21A08R", "Semiología", 4, "21A02R"],
-        ["21A09R", "Química y Bioquímica", 3, "—"],
-        ["21A10R", "Microbiología y Parasitología", 3, "—"],
-        ["21A11R", "Enfermería Clínica", 5, "—"],
-        ["21A12R", "Enfermería Pediátrica", 6, "—"],
-        ["21A13R", "Proyección Social III", 3, "21A07R"]
-      ]
-    },
-    {
-      numero: 5,
-      cursos: [
-        ["21A14R", "Farmacología y Terapéutica", 3, "—"],
-        ["21A15R", "Enfermería Atención Primaria I", 3, "—"],
-        ["21A16R", "Salud Comunitaria I", 4, "—"],
-        ["21A17R", "Nutrición y Dietoterapia", 3, "—"],
-        ["21A18R", "Salud del Adulto I", 6, "—"],
-        ["21A19R", "Proyección Social IV", 3, "—"]
-      ]
-    },
-    {
-      numero: 6,
-      cursos: [
-        ["21A20R", "Salud Pública y Epidemiología", 2, "—"],
-        ["21A21R", "Atención Primaria II", 4, "21A15R"],
-        ["21A22R", "Enfermería Geriátrica", 4, "—"],
-        ["21A23R", "Medicina Alternativa", 2, "—"],
-        ["21A24R", "Salud del Adulto II", 6, "21A18R"],
-        ["21AA1R", "Promoción de la Salud", 2, "—"],
-        ["21AA2R", "Ética en Enfermería", 2, "—"]
-      ]
-    },
-    {
-      numero: 7,
-      cursos: [
-        ["21A25R", "Taller Investigación I", 4, "—"],
-        ["21A26R", "Emergencias y Desastres", 3, "—"],
-        ["21A27R", "Salud Mental y Psiquiatría", 3, "—"],
-        ["21A28R", "Salud de la Mujer", 6, "—"],
-        ["21A29R", "Inglés I", 3, "—"],
-        ["21AA3R", "Proyectos Sociales", 2, "—"],
-        ["21AA4R", "Gestión en Enfermería", 2, "—"]
-      ]
-    },
-    {
-      numero: 8,
-      cursos: [
-        ["21A30R", "Salud Comunitaria II", 3, "—"],
-        ["21A31R", "Taller Investigación II", 4, "21A25R"],
-        ["21A32R", "Internado I", 10, "—"],
-        ["21A33R", "Inglés II", 3, "21A29R"],
-        ["21AA5R", "Rehabilitación Geriátrica", 2, "—"],
-        ["21AA6R", "Gestión Gerontológica", 2, "—"]
-      ]
-    },
-    {
-      numero: 9,
-      cursos: [
-        ["21A35R", "Internado II", 15, "21A32R"],
-        ["P02A2151R", "Seminario de Tesis", 6, "—"]
-      ]
-    },
-    {
-      numero: 10,
-      cursos: [
-        ["21A37R", "Internado III", 15, "21A35R"],
-        ["P02A2153R", "Trabajo de Investigación", 6, "P02A2151R"]
-      ]
-    }
-  ];
+let completados = JSON.parse(localStorage.getItem("completados")) || [];
 
-  ciclos.forEach(ciclo => {
-    const tablaHTML = `
-      <h2>Ciclo ${ciclo.numero}</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Código</th>
-            <th>Curso</th>
-            <th>Créditos</th>
-            <th>Pre Requisitos</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${ciclo.cursos.map(curso => `
-            <tr>
-              <td>${curso[0]}</td>
-              <td>${curso[1]}</td>
-              <td>${curso[2]}</td>
-              <td>${curso[3]}</td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-    `;
-    contenido.innerHTML += tablaHTML;
-  });
-});
+function guardarEstado() {
+  localStorage.setItem("completados", JSON.stringify(completados));
+}
+
+function renderMalla() {
+  const contenedor = document.getElementById("malla");
+  contenedor.innerHTML = "";
+
+  for (let cicloNum = 1; cicloNum <= 3; cicloNum++) {
+    const cicloCursos = cursos.filter(c => c.ciclo === cicloNum);
+    const divCiclo = document.createElement("div");
+    divCiclo.classList.add("ciclo");
+
+    const h2 = document.createElement("h2");
+    h2.textContent = `Ciclo ${cicloNum}`;
+    divCiclo.appendChild(h2);
+
+    const cursosDiv = document.createElement("div");
+    cursosDiv.classList.add("cursos");
+
+    cicloCursos.forEach(curso => {
+      const div = document.createElement("div");
+      div.classList.add("curso");
+
+      // Revisa si los prerequisitos están completados
+      const prereqCumplidos = curso.prereq.every(cod => completados.includes(cod));
+
+      if (completados.includes(curso.cod)) {
+        div.classList.add("completado");
+      } else if (prereqCumplidos) {
+        div.classList.add("disponible");
+      } else {
+        div.classList.add("bloqueado");
+      }
+
+      div.innerHTML = `
+        <h3>${curso.nombre}</h3>
+        <p><strong>Código:</strong> ${curso.cod}</p>
+        <button onclick="marcarCompletado('${curso.cod}')">Marcar como completado</button>
+      `;
+      cursosDiv.appendChild(div);
+    });
+
+    divCiclo.appendChild(cursosDiv);
+    contenedor.appendChild(divCiclo);
+  }
+}
+
+function marcarCompletado(cod) {
+  if (!completados.includes(cod)) {
+    completados.push(cod);
+    guardarEstado();
+    renderMalla();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", renderMalla);
