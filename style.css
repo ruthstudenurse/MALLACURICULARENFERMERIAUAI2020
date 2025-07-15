@@ -1,53 +1,70 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f9ff;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background: linear-gradient(to right, #007bff, #00b3ff);
-  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f9ff;
+  color: #333;
   text-align: center;
-  padding: 20px 10px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
   padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-  color: #007bff;
-}
-
-h2 {
-  margin-top: 40px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+h1 {
+  color: #2b4f81;
   margin-bottom: 30px;
 }
 
-th {
+.ciclo {
+  margin-bottom: 40px;
+}
+
+.ciclo h2 {
+  color: #1c3553;
+}
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.curso {
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 220px;
+  background-color: #ddd;
+  box-shadow: 2px 2px 6px #ccc;
+  transition: 0.3s;
+}
+
+.curso h3 {
+  margin: 0;
+}
+
+.completado {
+  background-color: #c8f7c5; /* Verde claro */
+  border: 2px solid #4caf50;
+}
+
+.disponible {
+  background-color: #dceeff; /* Azul claro */
+  border: 2px solid #2196f3;
+}
+
+.bloqueado {
+  background-color: #f0f0f0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.curso button {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: none;
   background-color: #007bff;
   color: white;
-  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-td {
-  background-color: #e9f5ff;
-  padding: 10px;
-  text-align: center;
-}
-
-tr:nth-child(even) td {
-  background-color: #d3ecff;
+.curso button:hover {
+  background-color: #0056b3;
 }
