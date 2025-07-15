@@ -1,83 +1,86 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4ff;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
   color: #333;
+  margin: 0;
   padding: 20px;
-  overflow-x: hidden;
 }
 
 h1 {
   text-align: center;
-  color: #0066cc;
+  color: #d36ba6;
   margin-bottom: 30px;
 }
 
 #malla {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
+  gap: 15px;
   padding: 10px;
   scroll-snap-type: x mandatory;
 }
 
 .ciclo {
-  flex: 0 0 300px;
+  flex: 0 0 260px;
   scroll-snap-align: start;
-  border: 2px solid #ccc;
+  background-color: #ffe6f0;
   border-radius: 10px;
-  background-color: #ffffff;
-  padding: 15px;
-  min-height: 300px;
+  padding: 12px;
+  box-shadow: 0 0 10px rgba(211, 107, 166, 0.2);
 }
 
 .ciclo h2 {
-  background-color: #0066cc;
+  background-color: #f4a4c6;
   color: white;
-  padding: 10px;
-  border-radius: 5px;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 .cursos {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 8px;
 }
 
 .curso {
-  padding: 10px;
-  border-radius: 6px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #fce4ec;
+  border: 1px solid #f8bbd0;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .completado {
-  background-color: #c8e6c9;
-  border: 2px solid #388e3c;
+  background-color: #d8f3dc;
+  border: 2px solid #81c784;
 }
 
 .disponible {
-  background-color: #fff3cd;
-  border: 2px solid #ff9800;
+  background-color: #fff9c4;
+  border: 2px solid #fbc02d;
 }
 
 .bloqueado {
-  background-color: #f8d7da;
-  border: 2px solid #dc3545;
+  background-color: #f8bbd0;
+  border: 2px dashed #e91e63;
   opacity: 0.6;
 }
 
 button {
-  margin-top: 8px;
-  padding: 6px 10px;
-  border: none;
-  background-color: #0066cc;
+  margin-top: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #d36ba6;
   color: white;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #004999;
+  background-color: #b85494;
 }
