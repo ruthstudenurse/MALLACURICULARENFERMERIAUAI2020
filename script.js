@@ -1,11 +1,11 @@
 const cursosPorCiclo = {
   1: [
-    ["MATEMÁTICA I", "4.0", "2", "0", "3", "0", "No tiene requisitos"],
-    ["PENSAMIENTO CRÍTICO", "4.0", "0", "0", "4", "0", "No tiene requisitos"],
-    ["FILOSOFÍA Y ÉTICA", "3.0", "2", "0", "2", "0", "No tiene requisitos"],
-    ["TALLER DE COMUNICACIÓN ORAL", "4.0", "2", "0", "3", "0", "No tiene requisitos"],
-    ["GLOBALIZACIÓN Y REALIDAD NACIONAL", "3.0", "2", "0", "2", "0", "No tiene requisitos"],
-    ["CULTURA AMBIENTAL", "3.0", "4", "0", "4", "0", "No tiene requisitos"],
+    ["MATEMÁTICA I"],
+    ["PENSAMIENTO CRÍTICO"],
+    ["FILOSOFÍA Y ÉTICA"],
+    ["TALLER DE COMUNICACIÓN ORAL"],
+    ["GLOBALIZACIÓN Y REALIDAD NACIONAL"],
+    ["CULTURA AMBIENTAL"],
   ],
   2: [
     ["MATEMÁTICA II", "4.0", "2", "0", "3", "0", "No tiene requisitos"],
